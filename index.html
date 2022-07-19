@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- Timeline CSS only -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <link href="https://demo.themesberg.com/pixel-pro/css/pixel.css" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        .outcontanin {
+            overflow-x: hidden;
+        }
+        .bg_img {
+            background-image: url("img/ACP_Adsbg.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 1em 0;
+        }
+        .bg2_img {
+            background-image: url("img/toptitle.png");
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding: 2em 0;
+            animation-name: bg-active;
+            animation-duration:3s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes bg-active{
+            0%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0.7;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @media print, screen and (max-width:1024px) {
+            .bg2_img {
+                height: 40em;
+                background-position: center bottom;
+                /* background-position: 13em; */
+            }
+        }
+        /* .sidenav {
+            position: absolute;
+            z-index: 1;
+            top: 2%;
+            right: 15%;
+            width: 25em;
+        }
+        @media print, screen and (max-width:1100px) {
+            .sidenav {
+                position: absolute;
+                z-index: 1;
+                top: 3%;
+                right: 10%;
+                width: 20em;
+            }
+        }
+        @media print, screen and (max-width:858px) {
+            .sidenav {
+                position: absolute;
+                z-index: 1;
+                top: 3%;
+                right: 3%;
+                width: 20em;
+            }
+        }
+        @media print, screen and (max-width:767px) {
+            .sidenav {
+                position: absolute;
+                z-index: 1;
+                top: 1%;
+                right: 3%;
+                width: 18em;
+            }
+        }
+        @media print, screen and (max-width:654px) {
+            .sidenav {
+                position: absolute;
+                z-index: 1;
+                top: 3%;
+                right: 0;
+                width: 15em;
+            }
+        }
+        @media print, screen and (max-width:500px) {
+            .sidenav {
+                position: absolute;
+                z-index: 1;
+                top: 4%;
+                right: 0;
+                width: 15em;
+            }
+        } */
+        .bg3_img {
+            background-image: url("img/ACP_BG01.png"), url("img/ACP_BG02.png");
+            background-position: right, -20%;
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+        @media print, screen and (max-width:767px) {
+            .bg3_img {
+                background-image: url("img/ACP_BG02.png");
+                background-position: 0%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        .bg4_img {
+            background-image: url("img/tigeryearSale3.png"), url("img/tigeryearSale2.png");
+            background-position: right -50%, -50%;
+            background-repeat: no-repeat;
+            background-size: 40%, contain;
+        }
+        @media print, screen and (max-width:1200px) {
+            .bg4_img {
+                background-image: url("img/tigeryearSale3.png"), url("img/tigeryearSale2.png");
+                background-position: right 20%, -100%;
+                background-repeat: no-repeat;
+                background-size: 40%, contain;
+            }
+        }
+        @media print, screen and (max-width:767px) {
+            .bg4_img {
+                background-image: url("img/tigeryearSale2.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+        .img-fluid-min {
+            min-width: 100%;
+            height: auto;
+        }
+        .txt-lg {
+            font-size: 2.6em;
+            font-weight: bold;
+            color: #ffff00;
+        }
+        .TXT-free300 {
+            color: #ffff00;
+            font-weight: bold;
+            font-size: 2.4em;
+            line-height: 1.2;
+        }
+        .txt-subtitle {
+            font-size: 2.6em;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+        .txt-md {
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 1.5em;
+        }
+        .txt-sm {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        .txt-white {
+            color: #fff;
+        }
+
+        .txt-style-yellow {
+            color: #ffff00;
+            font-size: 1.5em;
+        }
+        .border-dotted::after {
+            content: "";
+            display: block;
+            border-bottom: 2px dotted rgba(255,255,255,.7);
+            width: 10em;
+        }
+        .border-dotted2::after {
+            content: "";
+            display: block;
+            border-bottom: 2px dotted rgba(255,255,255,.7);
+            width: 10em;
+            position: absolute;
+            right: 1.5rem;
+        }
+        @media print, screen and (max-width:767px) {
+            .txt-subtitle {
+                font-size: 2.6em;
+                line-height: 1.2;
+                font-weight: bold;
+            }
+            .dpP_title span::before {
+                content: "\A";
+                white-space: pre;
+            }
+            .border-dotted2::after {
+                content: "";
+                display: block;
+                border-bottom: 2px dotted rgba(255,255,255,.7);
+                width: 10em;
+                position: absolute;
+                left: 1.5rem;
+            }
+        }
+
+        /* timeline https://codepen.io/themesberg/pen/ExxROvM */
+        .timeline {
+            counter-reset: section;
+        }
+        .timeline-entry::before {
+            content: "";
+            color: #333333;
+            font-weight: bold;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3em;
+            height: 3em;
+            background-color: #ffffff;
+            border: 0.2em solid #ff631d;
+            border-radius: 50%;
+            counter-increment: section;
+            content: counter(section);
+        }
+        .timeline.timeline-one .timeline-item:after {
+            width: 0.2rem;
+            background-color: #ffffff;
+        }
+        .timeline.timeline-one .timeline-item:before {
+            border: 0.2rem solid #ffffff;
+            background-color: #ff631d;
+        }
+
+        /* list */
+        .ul-list {
+            background-color: #012a81;
+            border-radius: 5px;
+            color: #ffffff;
+            padding: 3em 0;
+        }
+
+        .ul-list ol {
+            margin: 0;
+            list-style-type:none;
+        }
+        .ul-list ol li {
+            margin-bottom: 0.3em;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        @media print, screen and (max-width:767px) {
+            .ul-list {
+                border-top: 0.3em solid #ffffff;;
+            }
+        }
+
+        .ACP-safe3-1::after {
+            content: "";
+            display: block;
+            background-image: url("img/ACP-safe3-1.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 5em;
+            margin: 0 1em;
+        }
+        @media print, screen and (max-width:500px) {
+            .ACP-safe3-1::after {
+                content: "";
+                display: block;
+                background-image: url("img/ACP-safe3-1mobile.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 5em;
+                margin: 0 1em;
+            }
+        }
+        .ACP-safe3-2::after {
+            content: "";
+            display: block;
+            background-image: url("img/ACP-safe3-2.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 5em;
+            margin: 0 1em;
+        }
+        @media print, screen and (max-width:500px) {
+            .ACP-safe3-2::after {
+                content: "";
+                display: block;
+                background-image: url("img/ACP-safe3-2mobile.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 5em;
+                margin: 0 1em;
+            }
+        }
+        .ACP-safe3-3::after {
+            content: "";
+            display: block;
+            background-image: url("img/ACP-safe3-3.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 5em;
+            margin: 0 1em;
+        }
+        @media print, screen and (max-width:500px) {
+            .ACP-safe3-3::after {
+                content: "";
+                display: block;
+                background-image: url("img/ACP-safe3-3mobile.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 5em;
+                margin: 0 1em;
+            }
+        }
+        .txt-hight {
+            height: 8em;
+        }
+
+        /* table */
+        #acpv-wrapper {
+            width: 100%;
+            background-image: url('http://download.t-tech.com.tw/userfiles/27760799/image/2022-acronis-threat-report.jpg');
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        #acpv-container {
+            width: 1000px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        #acpv-content-w {
+            width: 60%;
+            float: left;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        #acpv-content-f {
+            width: 40%;
+            float: left;
+            padding: 20px;
+        }
+
+        #arp-google iframe {
+            position: relative;
+            max-width: 100%;
+        }
+
+        .hr-solid-content {
+            color: transparent;
+            border: 0;
+            font-size: 12px;
+            padding: 1em 0;
+            position: relative;
+        }
+        .hr-solid-content::before {
+            content: attr(data-content);
+            position: absolute;
+            padding: 0 1ch;
+            line-height: 1px;
+            border: solid #ffffff;
+            color: #ffffff;
+            font-size: 1.5em;
+            border-width: 0 20em;
+            width: fit-content;
+            /* for 不支持fit-content浏览器 */
+            white-space: nowrap;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="outcontanin bg_img">
+        <div style="position: relative;">
+            <section class="container-fluid mb-6">
+                <div class="col-12 offset-md-1 col-md-11 bg2_img">
+                    <h2 class="txt-lg">
+                        2022勒索軟體將持續橫行<br>
+                        您的企業需要更完善的保護
+                    </h2><br>
+                    <p class="txt-subtitle txt-white dpP_title">
+                        Acronis Cyber Protect<br>
+                        提供卓越的資料保護與網路安全功能<br>
+                    </p>
+                </div>
+                <!-- <div class="col-md-6">
+                    <img src="img/free300days.png" alt="free300day">
+                </div> -->
+            </section>
+
+            <!-- <div class="sidenav">
+                <img src="img/free300days.png" alt="free300day">
+            </div> -->
+
+            <section class="mb-6">
+                <h3 class="txt-md txt-white dpP_title" align="center">
+                    2022網路威脅的<span>前5大趨勢</span>
+                </h3>
+                <div class="section section-md py-3">
+                    <div class="container">
+                        <div class="row mt-4">
+                            <div class="col-md-10 mx-auto">
+                                <!-- Timeline -->
+                                <div class="timeline timeline-one">
+                                <!-- Timeline Item 1 -->
+                                <div class="timeline-item">
+                                    <div>
+                                        <span class="timeline-entry icon" data-aos="zoom-in"
+                                        data-aos-offset="350"
+                                        data-aos-delay="200"></span>
+                                    <h4 class="my-3 txt-md txt-white border-dotted2">2021Q3被攻擊最多的國家<br><span class="txt-style-yellow">美國+德國+加拿大</span></h4>
+                                    </div>
+                                </div>
+                                <!-- Timeline Item 2 -->
+                                <div class="timeline-item">
+                                    <div>
+                                        <span class="timeline-entry icon" data-aos="zoom-in"
+                                        data-aos-offset="350"
+                                        data-aos-delay="300"></span>
+                                        <h4 class="my-3 txt-md txt-white border-dotted">僅在10月份Acronis阻止<br><span class="txt-style-yellow">376,000</span>個URL</h4>
+                                    </div>
+                                </div>
+                                <!-- Timeline Item 3 -->
+                                <div class="timeline-item">
+                                    <div>
+                                        <span class="timeline-entry icon" data-aos="zoom-in"
+                                        data-aos-offset="350"
+                                        data-aos-delay="400"></span>
+                                        <h4 class="my-3 txt-md txt-white border-dotted2">2021Q2-Q3<br>惡意郵件增加<span class="txt-style-yellow">40%</span></h4>
+                                    </div>
+                                </div>
+                                <!-- Timeline Item 4 -->
+                                <div class="timeline-item">
+                                    <div>
+                                        <span class="timeline-entry icon" data-aos="zoom-in"
+                                        data-aos-offset="350"
+                                        data-aos-delay="500"></span>
+                                        <h4 class="my-3 txt-md txt-white border-dotted">2021年勒索軟體造成<br><span class="txt-style-yellow">200億</span>美元損失</h4>
+                                    </div>
+                                </div>
+                                    <!-- Timeline Item 5 -->
+                                <div class="timeline-item">
+                                    <div>
+                                        <span class="timeline-entry icon" data-aos="zoom-in"
+                                        data-aos-offset="250"
+                                        data-aos-delay="400"></span>
+                                        <!-- <span class="icon"><i class="fab fa-angular"></i></span> -->
+                                        <h4 class="my-3 txt-md txt-white border-dotted2">至少<span class="txt-style-yellow">80%</span>的公司<br>曾經受到攻擊</h4>
+                                    </div>
+                                </div>
+                                </div>
+                                <!--End of Timeline-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-6 bg3_img">
+                <!-- <img class="" src="img/ACP_BG02.png" alt="photo"> -->
+                <h3 class="txt-md txt-white" align="center">
+                    2022年的網路威脅預測
+                </h3>
+                <div class="row justify-content-around py-5">
+                    <div class="col-11 col-md-5 ul-list d-flex flex-row align-items-baseline" data-aos="fade-left" 
+                    data-aos-delay="200">
+                        <ol>
+                            <li>1. 儘管各國政府及國際刑警組織做出努力</li>
+                            <li>2. 勒索軟體仍在繼續增長及演變</li>
+                            <li>3. 加密貨幣成為攻擊者的最愛</li>
+                            <li>4. 網路釣魚仍然為主要攻擊媒介</li>
+                            <li>5. MSP自身的工具成為目標</li>
+                        </ol>
+                    </div>
+                    <div class="col-11 col-md-5 ul-list d-flex flex-row align-items-baseline" data-aos="fade-left"
+                    data-aos-delay="400">
+                        <ol>
+                            <li>6. 雲端的信任級別受到損害-API攻擊</li>
+                            <li>7. 個人機敏資訊遭到洩露</li>
+                            <li>8. AI人工智慧遭到攻擊</li>
+                            <li>9. 安全產品的整合-單一供應商</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-6">
+                <h3 class="txt-md txt-white mb-5" align="center">Acronis Cyber Protect<br>的安全防護三大機制</h3>
+                <!-- <div>
+                    <img class="img-fluid" src="img/ACP_AdsTitle01.png" alt="01" style="vertical-align: top;">
+                    <h3 class="txt-white" align="left" style="display: inline-block;">
+                        網路安全與端點防護
+                    </h3>
+                </div> -->
+                <div class="ACP-safe3-1" data-aos="fade-left" data-aos-delay="200"></div>
+                
+                <div class="row py-5">
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="200">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">即時威脅摘要</h4>
+                            <p class="txt-white">多個 Acronis Cyber Protection Operation Center (CPOC) 持續監控網路安全環境，並針對任何類型的潛在威脅發出警示。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-1-1.png" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="400">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">弱點評估</h4>
+                            <p class="txt-white">透過弱點評估可以掃描電腦的弱點，確保所有應用程式和作業系統皆為最新，且不會被網路罪犯利用。 </p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-1-2.png" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="200">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">修補程式管理</h4>
+                            <p class="txt-white">軟體修補程式和更新在已知弱點成為問題前加以修正。透過第三方軟體的修補程式管理支援，可以輕鬆排程或手動防護資料安全。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-1-3.png" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="400">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">磁碟機健康狀況監控 </h4>
+                            <p class="txt-white">透過在S.M.A.R.T.報告上使用機器學習服務，以及各種作業系統參數，在磁碟發生問題前作出警示。可事前採取必要的措施來防護資料。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-1-4.png" alt="">
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="ACP-safe3-2" data-aos="fade-left" data-aos-delay="200"></div>
+                
+                <div class="row py-5">
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="200">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">防惡意軟體和防毒</h4>
+                            <p class="txt-white">主動防護資料、應用程式及系統，免於當今 進階攻擊。利用靜態 AI 分析器和行為引擎、防勒索軟體等技術，即時保護寶貴資料。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-2-1.png" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="400">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">URL 篩選與分類</h4>
+                            <p class="txt-white">透過進階URL過濾，可利用URL黑名單和白名單、HTTP / HTTPS攔截器控制網站存取，以及惡意 URL 的承載分析。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-2-2.png" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="200">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">備份存檔的惡意軟體掃描</h4>
+                            <p class="txt-white">透過集中的位置掃描完整磁碟備份，Acronis Cyber Protect 可協助尋找惡意軟體，並產生 警示確保使用者備份存檔乾淨、無惡意軟體。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-2-3.png" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="400">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">防止入侵</h4>
+                            <p class="txt-white">使用專注於弱點攻擊的行為型偵測啟發學習法 來預防包括零時差攻擊和無檔案型攻擊在內的 進階攻擊技術。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-2-4.png" alt="">
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="ACP-safe3-3" data-aos="fade-left" data-aos-delay="200"></div>
+                
+                <div class="row py-5">
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="200">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">Acronis Active Protection</h4>
+                            <p class="txt-white">保護資料和系統免受勒索軟體攻擊，同時偵測和防止大量資料、備份檔案和備份應用程式同一時間受到可疑之變更。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-3-1.jpg" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="400">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">安全復原</h4>
+                            <p class="txt-white">備份的作業系統影像或應用程式可能存在惡意 軟體，修補裝置並套用最新的防惡意軟體定義，讓使用者降低再次感染的機會。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-3-2.png" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="200">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">資料保護圖</h4>
+                            <p class="txt-white">透過資料保護對照圖，取得已儲存資料的詳細資訊，透過自動資料分類追蹤重要檔案的防護狀態，協助您進一步防護您的資料。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-3-3.png" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center px-4 pb-5" data-aos="fade-left" 
+                    data-aos-delay="400">
+                        <div class="txt-hight">
+                            <h4 class="txt-sm txt-white">Acronis Instant Restore</h4>
+                            <p class="txt-white">利用業界最佳 RTO 縮短復原時間。在短時間內可啟動並執行 VM，並可以將資料在背景執行中無形地移動到主機。</p>
+                        </div>
+                        <img class="img-fluid" src="img/ACP-safe3-3-4.png" alt="">
+                    </div>
+                </div>
+            </section>
+            
+            <section class="container-fluid">
+                <div id="acpv-wrapper">
+                <div id="acpv-container">
+                <div id="arp-google" style="clear: both; padding-top: 20px; text-align: center;"><iframe frameborder="0" height="550" marginheight="0" marginwidth="0" scrolling="no" src="https://www.jadespring.com.tw/2022-acronis-threat-report" width="1200">載入中&amp;hellip;</iframe></div>
+                </div>
+                
+                <div style="clear: both;">&nbsp;</div>
+                </div>
+                
+            <hr class="hr-solid-content" data-content="促銷活動" /></section>
+
+            <section class="container-fluid mb-6 bg4_img">
+                <div class="row justify-content-center">
+                    <div class="col-12 mb-5 col-md-9">
+                        <img class="img-fluid-min" src="img/tigeryearSale1.png" alt="sale">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 offset-md-1 col-md-6">
+                        <p class="txt-white" style="font-size: 1.5em;">安克諾斯Acronis Cyber Protect是全球首創將網路安全與資料防護整合的解決方案，整合備份和復原、修補程式弱點、防惡意軟體、安全性控制、監控與報告等功能。現在更可依您企業的需求隨時調整產品授權、軟體更新、並享有划算的建置成本及優質服務等優勢，大大降低企業資安採購門檻並保護企業免受當今最新威脅。</p>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-md-10 offset-md-1 mt-5">
+                        <img class="img-fluid-min" src="img/tigeryearSale4.png" alt="sale">
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+    // $(function () {
+
+    //     var $page = $(window);
+
+    //     var $backToTop = $('.js-back-to-top');
+
+    //     // 當用戶滾動到離頂部100像素時，展示回到頂部按鈕
+
+    //     $page.scroll(function () {
+
+    //     if ($page.scrollTop() < 300) {
+
+    //     $backToTop.show();
+
+    //     } else {
+
+    //     $backToTop.hide();
+    //     }
+    //     });
+    // });
+    </script>
+</body>
+</html>
